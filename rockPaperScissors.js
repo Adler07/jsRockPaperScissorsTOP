@@ -13,11 +13,20 @@ function getComputerChoice() {
 
 //will only play a round of Rock Paper Scissors and either "You win" or "You lose"
 
-/*function playRound(playerSelection,computerSelection) {
-    if (playerSelection == "rock" && computerSelection == "scissors"){
-        return 
-    } 
-}*/
+function playRound(playerSelection,computerSelection) {
+    const permanentChoice = computerSelection
+    if (playerSelection == "rock" && permanentChoice == "scissors"){
+        return ("You Win ! rock beats scissors");
+    } else if (playerSelection == "paper" && permanentChoice =="rock"){
+        return ("You Win ! paper beats scissors");
+    } else if (playerSelection == "scissors" && permanentChoice == "paper"){
+        return ("You Win ! scissors beat paper");
+    } else if (playerSelection == permanentChoice) {
+        return ("It's a tie ! You both chose " + playerSelection);
+    } else {
+        return ("You Lose ! " + permanentChoice + " beat(s) " + playerSelection);
+    }
+}
 
 const playerSelection = prompt("Rock, paper or scissors ? : ").toLowerCase();
 const computerSelection = getComputerChoice();
