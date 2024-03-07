@@ -1,3 +1,5 @@
+
+
 // function that will randomly pick "Rock","Paper" or "Scissors" for the computer
 
 function getComputerChoice() {
@@ -28,7 +30,15 @@ function playRound(playerSelection,computerSelection) {
     }
 }
 
-const playerSelection = prompt("Rock, paper or scissors ? : ").toLowerCase();
-const computerSelection = getComputerChoice();
-console.log(computerSelection)
-console.log(playRound(playerSelection,computerSelection));
+function playGame() {
+    let sum = 0
+    do {
+        const playerSelection = prompt("Rock, paper or scissors ? : ").toLowerCase();
+        const computerSelection = getComputerChoice();
+        console.log(computerSelection)
+        console.log(playRound(playerSelection,computerSelection));
+        sum += 1
+    } while (sum != 5)
+}
+
+playGame()
